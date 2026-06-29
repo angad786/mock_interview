@@ -6,6 +6,7 @@ const path = require("path");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const imageRoutes = require("./routes/images");
+const debugRoutes = require("./routes/debug");
 const db = require("./db/database");
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.static(FRONTEND_DIR));
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/images", imageRoutes);
+app.use("/api/debug", debugRoutes);
 
 // Health check
 app.get("/api/health", (req, res) => {
