@@ -1,15 +1,14 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const http = require("http");
-const https = require("https");
+const { getImagesDirPath, ensureDir } = require("../db/storage");
 
 const router = express.Router();
 
-const STORAGE_DIR = path.join(__dirname, "..", "db", "data", "images");
+const STORAGE_DIR = getImagesDirPath();
 
 function ensureStorageDir() {
-  fs.mkdirSync(STORAGE_DIR, { recursive: true });
+  ensureDir(STORAGE_DIR);
 }
 
 router.post("/save-camera-image", async (req, res) => {

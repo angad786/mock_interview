@@ -11,15 +11,14 @@
 
 const fs = require("fs");
 const path = require("path");
+const { getUsersFilePath, ensureDir } = require("./storage");
 
-const DB_DIR = path.join(__dirname, "data");
-const USERS_FILE = path.join(DB_DIR, "users.json");
+const USERS_FILE = getUsersFilePath();
 
 // Ensure data directory + file exist
 function init() {
-  if (!fs.existsSync(DB_DIR)) {
-    fs.mkdirSync(DB_DIR, { recursive: true });
-  }
+  const dataDir = path.dirname(USERS_FILE);
+  ensureDir(dataDir);
   if (!fs.existsSync(USERS_FILE)) {
     fs.writeFileSync(USERS_FILE, JSON.stringify({ users: [], nextId: 1 }, null, 2));
   }

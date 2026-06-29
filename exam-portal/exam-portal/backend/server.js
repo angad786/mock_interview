@@ -8,6 +8,7 @@ const userRoutes = require("./routes/user");
 const imageRoutes = require("./routes/images");
 const debugRoutes = require("./routes/debug");
 const db = require("./db/database");
+const { getDataDir } = require("./db/storage");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -41,5 +42,6 @@ app.get(/^\/(?!api).*/, (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`\n  Government Mock Exam Portal server running`);
-  console.log(`  ➜  http://localhost:${PORT}\n`);
+  console.log(`  ➜  http://localhost:${PORT}`);
+  console.log(`  data directory: ${getDataDir()}\n`);
 });

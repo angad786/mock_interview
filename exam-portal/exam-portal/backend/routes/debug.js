@@ -2,9 +2,10 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const db = require("../db/database");
+const { getImagesDirPath } = require("../db/storage");
 
 const router = express.Router();
-const IMAGES_DIR = path.join(__dirname, "..", "db", "data", "images");
+const IMAGES_DIR = getImagesDirPath();
 
 router.get("/users", (req, res) => {
   try {
