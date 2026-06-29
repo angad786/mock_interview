@@ -1,0 +1,5 @@
+node_modules/
+backend/db/data/
+backend/.env
+*.log
+.DS_Store

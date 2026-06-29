@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — MADE EASY</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <div class="gov-strip">
+    <span>National Mock Exam Test Portal</span>
+    <span>Candidate Login</span>
+  </div>
+
+  <div class="auth-shell">
+
+    <aside class="auth-aside">
+      <div>
+        <div class="emblem">E</div>
+        <h1 class="aside-title">Welcome back, candidate</h1>
+        <p class="aside-sub">
+          Log in to access your mock exams, review past attempts, and
+          check your registered exam-center region.
+        </p>
+        <ul class="aside-points">
+          <li><span class="mark">—</span> Your session stays active for 2 hours.</li>
+          <li><span class="mark">—</span> New here? Registration takes under a minute.</li>
+        </ul>
+      </div>
+      <p class="aside-foot">Mock Exam Portal · Candidate Services · Demo build for learning purposes only</p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="card-eyebrow">Returning candidate</div>
+        <h2 class="card-title">Log in to your account</h2>
+        <p class="card-sub">Enter your registered email and password.</p>
+
+        <div class="banner error" id="formBanner"></div>
+        <div class="banner success" id="formBannerSuccess"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="field-group">
+            <label class="field-label" for="email">Email address <span class="req">*</span></label>
+            <input class="field-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+            <div class="field-error" id="err-email"></div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="password">Password <span class="req">*</span></label>
+            <input class="field-input" type="password" id="password" name="password" autocomplete="current-password" placeholder="Your password" />
+            <div class="field-error" id="err-password"></div>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submitBtn">
+            Log in
+          </button>
+
+          <p class="form-foot">
+            New candidate? <a href="register.html">Create an account</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

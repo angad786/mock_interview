@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — MADE EASY</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <div class="gov-strip">
+    <span>National Mock Exam Test Portal</span>
+    <span>Candidate Registration Desk</span>
+  </div>
+
+  <div class="auth-shell">
+
+    <!-- Left informational panel -->
+    <aside class="auth-aside">
+      <div>
+        <div class="emblem">E</div>
+        <h1 class="aside-title">Register as a verified exam candidate</h1>
+        <p class="aside-sub">
+          Every candidate profile is tagged with a registered location.
+          This keeps exam-center allotment and result records accurate
+          for your region.
+        </p>
+        <ul class="aside-points">
+          <li><span class="mark">—</span> Location is mandatory and is captured once at registration.</li>
+          <li><span class="mark">—</span> Your coordinates are used only for regional exam-center matching.</li>
+          <li><span class="mark">—</span> Passwords are stored as secure one-way hashes, never in plain text.</li>
+        </ul>
+      </div>
+      <p class="aside-foot">Mock Exam Portal · Candidate Services · Demo build for learning purposes only</p>
+    </aside>
+
+    <!-- Right form panel -->
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="card-eyebrow">New candidate</div>
+        <h2 class="card-title">Create your account</h2>
+        <p class="card-sub">Fields marked <span style="color:#B3261E">*</span> are required, including your location.</p>
+
+        <div class="banner error" id="formBanner"></div>
+
+        <form id="registerForm" novalidate>
+
+          <div class="field-group">
+            <label class="field-label" for="fullName">Full name <span class="req">*</span></label>
+            <input class="field-input" type="text" id="fullName" name="fullName" autocomplete="name" placeholder="As per your government ID" />
+            <div class="field-error" id="err-fullName"></div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="email">Email address <span class="req">*</span></label>
+            <input class="field-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+            <div class="field-error" id="err-email"></div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="mobile">Mobile number <span class="req">*</span></label>
+            <input class="field-input" type="tel" id="mobile" name="mobile" autocomplete="tel" placeholder="e.g. 9123456780" />
+            <div class="field-error" id="err-mobile"></div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="password">Password <span class="req">*</span></label>
+            <input class="field-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Minimum 6 characters" />
+            <div class="field-error" id="err-password"></div>
+          </div>
+
+          <!-- LOCATION BLOCK: mandatory -->
+          <div class="location-block">
+            <div class="location-head">
+              <label class="field-label">Regional exam-center matching <span class="req">*</span></label>
+              <span class="location-status pending" id="locStatus">
+                <span class="dot"></span> Not captured
+              </span>
+            </div>
+
+            <button type="button" class="btn-locate" id="btnLocate">
+              <span id="locateBtnIcon">📍</span> <span id="locateBtnText">Allow</span>
+            </button>
+
+            <div class="field-group" style="margin-bottom:10px; display:none;" >
+              <label class="field-label" for="locationText">Address / area <span class="req">*</span></label>
+              <input class="field-input" type="text" id="locationText" name="locationText" placeholder="e.g. Delhi, Mumbai, Maharashtra" />
+              <div class="field-hint">Auto-filled when possible — you can edit it to be more specific.</div>
+              <div class="field-error" id="err-locationText"></div>
+            </div>
+
+            <div class="coords-row" style="display: none;">
+              <div class="coords-readout">
+                <span class="lbl">Latitude</span>
+                <span id="latDisplay">—</span>
+              </div>
+              <div class="coords-readout">
+                <span class="lbl">Longitude</span>
+                <span id="lngDisplay">—</span>
+              </div>
+            </div>
+            <div class="field-error" id="err-coords"></div>
+
+            <input type="hidden" id="latitude" name="latitude" />
+            <input type="hidden" id="longitude" name="longitude" />
+          </div>
+
+          <button type="submit" class="btn-primary" id="submitBtn" disabled>
+            Create account
+          </button>
+
+          <p class="form-foot">
+            Already registered? <a href="login.html">Log in</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/geolocation.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+</html>

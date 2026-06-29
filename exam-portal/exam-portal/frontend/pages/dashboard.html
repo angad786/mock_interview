@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — MADE EASY</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="brand">
+      <div class="emblem">E</div>
+      MADE EASY
+    </div>
+    <button class="btn-logout" id="btnLogout">Log out</button>
+  </header>
+
+  <div class="dash-wrap">
+
+    <div class="admit-card" id="admitCard">
+      <div class="admit-card-head">
+        <h2>Candidate Profile</h2>
+        <span class="tag">Verified</span>
+      </div>
+      <div class="admit-card-body" id="profileBody">
+        <p>Loading your profile…</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">Available mock exams</h3>
+    <div class="exam-grid">
+      <div class="exam-tile">
+        <h3>General Awareness Mock Test</h3>
+        <p>50 questions · 45 minutes · Demo content</p>
+        <button class="btn-primary" disabled>Start test</button>
+      </div>
+      <div class="exam-tile">
+        <h3>Quantitative Aptitude Mock Test</h3>
+        <p>35 questions · 40 minutes · Demo content</p>
+        <button class="btn-primary" disabled>Start test</button>
+      </div>
+      <div class="exam-tile">
+        <h3>Reasoning & Logic Mock Test</h3>
+        <p>40 questions · 35 minutes · Demo content</p>
+        <button class="btn-primary" disabled>Start test</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
